@@ -83,3 +83,35 @@ tool:
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
+jobs:
+  - script: >
+      pipelineJob('ParameterizedJob') {
+          parameters {
+              stringParam('NAME', 'Default Name', 'Enter your name:')
+              booleanParam('ENABLE_FEATURE', false, 'Enable feature:')
+              choiceParam('CHOICE', ['Option 1', 'Option 2', 'Option 3'], 'Select an option:')
+          }
+          definition {
+              cps {
+                  script('''
+                      pipeline {
+                          agent any
+                          parameters {
+                              string(name: 'NAME', defaultValue: 'Default Name', description: 'Enter your name:')
+                              booleanParam(name: 'ENABLE_FEATURE', defaultValue: false, description: 'Enable feature:')
+                              choice(name: 'CHOICE', choices: ['Option 1', 'Option 2', 'Option 3'], description: 'Select an option:')
+                          }
+                          stages {
+                              stage('Parameters') {
+                                  steps {
+                                      echo "Hello, ${params.NAME}!"
+                                      echo "Feature enabled: ${params.ENABLE_FEATURE}"
+                                      echo "Selected option: ${params.CHOICE}"
+                                  }
+                              }
+                          }
+                      }
+                  ''')
+              }
+          }
+      }
