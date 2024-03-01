@@ -1,0 +1,1 @@
+This is a side project to learn how to automate the deployment of a jenkins container, and set up parameterized jobs without job dsl seeder jobs, and without scm, by calling the pipeline scripts by name after copying them manually into the container.  I couldn't find much documentation on how to do this, but this is useful for deployments which are offline.
