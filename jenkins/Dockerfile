@@ -20,6 +20,9 @@ RUN jenkins-plugin-cli --plugins \
 # Add JCasC configuration file
 COPY jenkins.yaml /var/jenkins_home/casc_configs/jenkins.yaml
 
+# Copy parameterized job configuration file as job.yaml
+COPY job.yaml /var/jenkins_home/casc_configs/job.yaml
+
 # Set JCasC configuration path
 ENV CASC_JENKINS_CONFIG /var/jenkins_home/casc_configs/jenkins.yaml
 

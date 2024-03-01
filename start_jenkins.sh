@@ -46,7 +46,7 @@ fi
 
 # Build the custom Jenkins image with JCasC and plugins
 echo "Building custom Jenkins image..."
-podman build -t $image_name jenkins
+podman build -t $image_name "$jenkins_dir"
 
 # Start a new Jenkins container with the custom image
 echo "Starting a new Jenkins container on port 8090..."
