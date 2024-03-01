@@ -12,6 +12,7 @@ RUN jenkins-plugin-cli --plugins \
     git \
     matrix-auth \
     job-dsl \
+    cloudbees-folder \
     github-branch-source \
     pipeline-github-lib \
     email-ext \

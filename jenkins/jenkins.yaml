@@ -84,5 +84,9 @@ tool:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
 jobs:
+  - script: >
+      folder('abc123') {
+        description('This is the abc123 folder')
+      }
   - file: "/var/jenkins_home/casc_configs/job.yaml"
 
