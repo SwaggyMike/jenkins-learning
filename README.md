@@ -1,6 +1,6 @@
 # Jenkins Learning
 
-This repository is a personal learning project aimed at understanding how to automate the deployment of a Jenkins container and set up parameterized jobs without using job DSL seeder jobs or SCM. The focus is on manually copying pipeline scripts into the Jenkins container and executing them by name, which is particularly useful for offline environments.
+This repository is a personal learning project aimed at understanding how to automate the deployment of a Jenkins container and set up parameterized jobs without using job DSL seeder jobs or SCM. The focus is on manually copying pipeline scripts into the Jenkins container and executing them by name, which is particularly useful for offline and/or air-gapped environments.
 
 ## Purpose
 
